@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title > MY FORM VALIDATION
+	</title>
+	<link rel="stylesheet" href="style1.css">
+	<script src="F:\Backup\RegistrationForm\validation.js"></script>
+	
+</head>
+	<body>
+		<div class="container">
+			<h1 class="title">Registration Form</h1>
+			<form name="regform" action="welcome.html" method="POST" onsubmit="return validateForm()">
+				<div class="form-control">
+					<label >First Name*</label>
+					<input id ="u1" type="text" name="fname" onBlur="validateFname()" placeholder="First Name*"  class = "stored"/>
+					<span class="error" id="errFname">Please enter first name.</span>
+					<div class="clear"></div>
+				</div>
+				
+				<div class="form-control">
+					<label>Email Address*</label>
+					<input id ="u2" type="text" name="email" onBlur="validateEmail()" placeholder="Email Address*" />
+					<span class="error" id="errorEmail">Please enter email address.</span>
+					<span class="error" id="errValidEmail">Please enter valid email address.</span>
+					<div class="clear"></div>
+				</div>
+				<div class = "form-control">
+					<select id ="u3" name="Country" multiple>
+						<option value="India">India</option>
+						<option value="Bangladesh">Bangladesh</option>
+						<option value="America">America</option>
+						<option value="Nepal">Nepal</option>
+					  </select>
+				</div>
+				<div class="form-control">
+					<label>Gender</label>
+					<span>
+						<input id ="u4"  type="radio" name="gender" value="male" id="male" onclick="validateGender();"/>
+						<label for="male"><span></span>Male</label>
+					</span>
+					<span>
+						<input type="radio" name="gender" value="female" id="female" onclick="validateGender();"/>
+						<label for="female"><span></span>Female</label>
+					</span>
+					<span class="error" id="errGender">Please select gender.</span>
+					<div class="clear"></div>
+				</div>
+				<div  class = "form-control">
+					<select id ="u5" name="Course" multiple size="5">
+						<option value="B.tech">B.tech</option>
+						<option value="Mba">Mba</option>
+						<option value="Mca">Mca</option>
+						<option value="BE">BE</option>
+					  </select>
+				</div>	
+				<div class="form-control">
+					<label>Password*</label>
+					<input id ="u6" type="password" name="pwd" onBlur="validatePassword()" placeholder="Password*" />
+					<span class="error" id="errPwd">Please enter password.</span>
+					<span class="error" id="errValidPwd">Password should contain one number,small character and capital character.minimum length 8 character</span>
+					<div class="clear"></div>
+				</div>
+				<div  class="form-control">
+					<label>Retype Password*</label>
+					<input id ="u7" type="password" name="repwd" onBlur="validateRePassword()" placeholder="Retype Password*" />
+					<span class="error" id="errRePwd">Password does not match.</span>
+					<div class="clear"></div>
+				</div>
+				<div class="form-control">
+					<input type="submit" value="Submit" />
+					<div class="clear"></div>
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

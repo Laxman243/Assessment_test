@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+  <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">-->
+
+    <!-- jQuery library -->
+   
+</head>
+<body>
+    <h1 class="text-center bg-dark text-white">Form validation</h1>
+    <div class="container">
+        <br />
+        <form action="Display.html" id="my_form" method="post" onsubmit="return validation()">
+
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" name="" id="username" class="form-control" />
+                <span id="usererror" class="text-dangerr font-weight-bold"></span>
+            </div>
+            <div>
+            <select id ="country">
+                <option id = "india" value="India">India</option>
+                <option id = "america" value="America">America</option>
+                <option id ="uk" value="UK">UK</option>
+                <option id ="us" value="US">US</option>
+                <option id ="australia" value="Autralia">US</option>
+            </select>
+            </div>
+            <div>
+                <h3>select gender</h3>
+                <input type="radio" name="gender" id ="male" value="male"> Male<br>
+                <input type="radio" name="gender" id = "female" value="female"> Female<br>
+               
+            </div>
+            <div>
+                <select id = "selector"> Courses :
+                    <option id = "b.tech" value="B.Tech">B.TECH</option>
+                    <option id = "m.tech" value="M.TECH">M.TECH</option>
+                    <option id ="mba" value="MBA">MBA</option>
+                    <option id ="me" value="ME">ME</option>
+                    <option id ="be" value="BE">BE</option>
+                </select>
+            <div class="form-group">
+                <label>PhoneNo.:</label>
+                <input type="Number" name="" id="Number" class="form-control" />
+                <span id="phoneerror" class="text-dangerr font-weight-bold"></span>
+            </div>
+            <div class="form-group">
+                <label>Email-id:</label>
+                <input type="email" name="" id="Email" class="form-control" />
+                <span id="Emailerror" class="text-dangerr font-weight-bold"></span>
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" name="" id="Password" class="form-control" />
+                <span id="passworderror" class="text-dangerr font-weight-bold"></span>
+            </div>
+            <input type="submit" name="" class="btn btn-primary" />
+        </form>
+    </div>
+    <script>
+       function validation() {
+       var username = document.getElementById('username').value;
+       var Number = document.getElementById('Number').value;
+       var Email = document.getElementById('Email').value;
+       var Password = document.getElementById('Password').value;
+       var Male = document.getElementById('male').value;
+       var Female = document.getElementById('female').value
+       var India = document.getElementById('india').value;       
+       var BTECH = document.getElementById('b.tech').value;
+       var MTECH = document.getElementById('m.tech').value;
+       var BE = document.getElementById('be').value;
+       var ME = document.getElementById('me').value;
+       var MBA = document.getElementById('mba').value;
+       var selector1 = document.getElementById('selector').value;
+       var country1 = document.getElementById('country').value;
+       
+       
+           var usercheck = /^[A-Za-z. ]{3,30}$/;
+           var mobilecheck = /^[789][0-9]{9}$/
+           var emailcheck = /^[A-Za-z_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+           var passwordcheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+           if (usercheck.test(username))
+           {
+               document.getElementById('usererror').innerHTML = " ";
+           }
+           else
+           {
+               document.getElementById('usererror').innerHTML = "** user name not correct";
+               return false;
+           }
+           if (mobilecheck.test(Number)) {
+               document.getElementById('phoneerror').innerHTML = " ";
+           }
+           else {
+               document.getElementById('phoneerror').innerHTML = "** valid mobilenumber";
+               return false;
+           }
+           if (passwordcheck.test(Password))
+           {
+               document.getElementById('passworderror').innerHTML = " ";
+           }
+           else
+           {
+               document.getElementById('passworderror').innerHTML = "** enter valid password";
+               return false;
+           }
+           if (country1 == '')
+           {
+               document.getElementById('country').innerHTML = "select country";
+           }
+           else
+           {
+            document.getElementById('country').innerHTML = " ";
+               return false;
+           }
+           if (selector1 == '')
+           {
+               document.getElementById('selector').innerHTML = "select Course";
+           }
+           else
+           {
+            document.getElementById('selector').innerHTML = " ";
+               return false;
+           }
+           
+           
+         
+           localStorage.setItem("Username1", username);
+           localStorage.setItem("PhoneNo1", Number);
+           localStorage.setItem("Emails1", Email);
+           localStorage.setItem("Passwords1", Password);
+           localStorage.setItem("india", India);
+           localStorage.setItem("selector", selector1);
+           localStorage.setItem("country",country1)
+                       
+          // localStorage.setItem("female", Female);
+     
+           
+       }
+    </script>
+</body>
+</html>  

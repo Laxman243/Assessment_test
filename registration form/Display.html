@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script>
+        // Called on body's `onload` event
+        function DataDisplay()
+        {
+            // Retrieving the text input's value which was stored into localStorage
+            var Username = localStorage.getItem("Username1");
+            var PhoneNo = localStorage.getItem("PhoneNo1");
+            var Emails = localStorage.getItem("Emails1");
+            var Passwords = localStorage.getItem("Passwords1");
+            var Gendr = localStorage.getItem("gender1");
+            var Sel = localStorage.getItem("Select1");
+            var Sel1 = localStorage.getItem("u51");
+            
+            // Writing the value in the document
+            document.write("username = " + Username + "<br/>");
+            document.write("Number = " + PhoneNo + "<br/>");
+            document.write("Email = " + Emails + "<br/>");
+            document.write("Password = " + Passwords + "<br/>");
+            document.write("gender = " + Gendr +"<br/>");
+            document.write("Select = " + Sel + "<br/>");
+            document.write("u5 = " + Sel1 + "<br/>");
+            
+        }
+    </script>
+    <script>
+        function check() {
+
+// stored data from the register-form
+var Username = localStorage.getItem("Username1");
+var Passwords = localStorage.getItem("Passwords1");
+
+// entered data from the login-form
+var userName = document.getElementById('userName');
+var userPw = document.getElementById('userPw');
+
+// check if stored data from register-form is equal to data from login form
+if(userName.value !== Username || userPw.value !== Passwords) {
+    alert('ERROR');
+}else {
+    alert('You are loged in.');
+}
+}
+        </script>
+
+</head>
+    
+            <form id="login-form"> 
+                <center>
+                <tr>
+                    <td>
+                    <input id="userName" type="text" placeholder="Enter Username" value=""/>   <br/> <br/>                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <input id="userPw" type="password" placeholder="Enter Password" value=""/>   <br/> <br/>                    
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <input id="login_btn" type="submit" value="Login" onClick="check()"/>        <br/> <br/>                
+                    </td>
+
+                </tr>
+                <tr>
+                    <td>
+                        <center>
+                                <button onclick="DataDisplay()">DisplayLocalStorageData</button>  
+                        </center>
+
+                    </td>
+                </tr>
+                </center>
+               </form>
+    
+
+</body>
+</html>

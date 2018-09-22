@@ -1,0 +1,7 @@
+F:\MyFirstAssessment\Assessment\Assessment\bin\Debug\Assessment.exe.config
+F:\MyFirstAssessment\Assessment\Assessment\bin\Debug\Assessment.exe
+F:\MyFirstAssessment\Assessment\Assessment\bin\Debug\Assessment.pdb
+F:\MyFirstAssessment\Assessment\Assessment\obj\Debug\Assessment.csprojAssemblyReference.cache
+F:\MyFirstAssessment\Assessment\Assessment\obj\Debug\Assessment.csproj.CoreCompileInputs.cache
+F:\MyFirstAssessment\Assessment\Assessment\obj\Debug\Assessment.exe
+F:\MyFirstAssessment\Assessment\Assessment\obj\Debug\Assessment.pdb

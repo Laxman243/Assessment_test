@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- Latest compiled and minified CSS -->
+
+</head>
+<body>
+    <h1 class="text-center bg-dark text-white">Form validation</h1>
+    <div class="container">
+        <br />
+        <form action="Display.html" id="my_form" method="post" onsubmit="return validation()">
+
+            <div class="form-group">
+                <label>Name:</label>
+                <input type="text" name="" id="username" class="form-control" />
+                <span id="usererror" class="text-dangerr font-weight-bold"></span>
+            </div>
+            <div>
+            <select  id = "select">
+                <option value="India">India</option>
+                <option value="America">America</option>
+                <option value="UK">UK</option>
+                <option value="US">US</option>
+                <option value="Autrila">US</option>
+            </select>
+            </div>
+            <div>
+                <h3>select gender</h3>
+                <input type="radio" name="gender" value="male"> Male<br>
+                <input type="radio" name="gender" value="female"> Female<br>
+               
+            </div>
+            <div>
+                <select id ="u5"  multiple size="5">
+                    <option value="B.tech">B.tech</option>
+                    <option value="Mba">Mba</option>
+                    <option value="Mca">Mca</option>
+                    <option value="BE">BE</option>
+                  </select>
+            </div>	
+            <div class="form-group">
+                <label>PhoneNo.:</label>
+                <input type="Number" name="" id="Number" class="form-control" />
+                <span id="phoneerror" class="text-dangerr font-weight-bold"></span>
+            </div>
+            <div class="form-group">
+                <label>Email-id:</label>
+                <input type="email" name="" id="Email" class="form-control" />
+                <span id="Emailerror" class="text-dangerr font-weight-bold"></span>
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" name="" id="Password" class="form-control" />
+                <span id="passworderror" class="text-dangerr font-weight-bold"></span>
+            </div>
+            <input type="submit" name="" class="btn btn-primary" />
+        </form>
+    </div>
+    <script>
+       function validation() {
+       var username = document.getElementById('username').value;
+       var Number = document.getElementById('Number').value;
+       var Email = document.getElementById('Email').value;
+       var Password = document.getElementById('Password').value;
+       var gendr = document.getElementById("gender").value;
+       var sel = document.getElementById("Select").value;
+        var sel1 = document.getElementById("u5").value;
+       
+           var usercheck = /^[A-Za-z. ]{3,30}$/;
+           var mobilecheck = /^[789][0-9]{9}$/
+           var emailcheck = /^[A-Za-z_]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z.]{2,6}$/;
+           var passwordcheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+           if (usercheck.test(username))
+           {
+               document.getElementById('usererror').innerHTML = " ";
+           }
+           else
+           {
+               document.getElementById('usererror').innerHTML = "** user name not correct";
+               return false;
+           }
+           if (mobilecheck.test(Number)) {
+               document.getElementById('phoneerror').innerHTML = " ";
+           }
+           else {
+               document.getElementById('phoneerror').innerHTML = "** valid mobilenumber";
+               return false;
+           }
+           if (passwordcheck.test(Password))
+           {
+               document.getElementById('passworderror').innerHTML = " ";
+           }
+           else
+           {
+               document.getElementById('passworderror').innerHTML = "** enter valid password";
+               return false;
+           }
+         
+           localStorage.setItem("Username1", username);
+           localStorage.setItem("PhoneNo1", Number);
+           localStorage.setItem("Emails1", Email);
+           localStorage.setItem("Passwords1", Password);
+           localStorage.getItem("gender1",gendr);
+           localStorage.getItem("Select1",sel);
+           localStorage.getItem("u51",sel1);
+        
+       }
+    </script>
+</body>
+</html>  
